@@ -1,0 +1,23 @@
+{
+  "name": "library-phase-one-assignment-2020-jmccueTechtonic",
+  "version": "1.0.0",
+  "description": "## Instructions:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TechtonicAcademy/library-phase-one-assignment-2020-jmccueTechtonic.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TechtonicAcademy/library-phase-one-assignment-2020-jmccueTechtonic/issues"
+  },
+  "homepage": "https://github.com/TechtonicAcademy/library-phase-one-assignment-2020-jmccueTechtonic#readme",
+  "dependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
