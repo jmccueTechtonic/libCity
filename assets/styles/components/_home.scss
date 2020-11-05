@@ -1,0 +1,58 @@
+// home section
+.whatAreWe {
+  height: 50vh;
+  position: relative;
+  &__img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .whatAreWe__container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 5px;
+
+    display: grid;
+    grid-row: repeat(3, max-content);
+    justify-items: center;
+  }
+
+  &__text {
+    color: rgb(255, 255, 255);
+  }
+  &__intro {
+  }
+  &__message {
+  }
+  &__reference {
+    justify-self: end;
+  }
+}
+
+.cta {
+  padding: 0 1rem;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+
+  &__welcome {
+    font-style: italic;
+    color: grey;
+  }
+
+  &__description {
+  }
+  &__btn {
+    background-color: rgb(29, 31, 58);
+    color: white;
+    font-weight: 600;
+    font-size: 1.125rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+  }
+}

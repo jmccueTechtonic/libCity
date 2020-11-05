@@ -1,3 +1,76 @@
+body {
+  margin: 0;
+  position: relative;
+}
 
+.addBook {
+  width: 100vw;
+}
+.addBook__detail {
+  text-align: center;
+}
+.addBook__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+}
+.addBook__label {
+  margin: 1rem 0 0.5rem 0;
+}
+.addBook__title--input {
+  width: 100%;
+  height: 1.75rem;
+}
+.addBook__author--input {
+  width: 100%;
+  height: 1.75rem;
+}
+.addBook__synopsis--textarea {
+  width: 100%;
+}
+.addBook__published--input {
+  height: 1.75rem;
+}
+.addBook__numPages--input {
+  height: 1.75rem;
+}
+.addBook__btn {
+  margin: 0.5rem;
+  background-color: #1d1f3a;
+  color: white;
+  font-weight: 600;
+  font-size: 1.125rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+}
+.addBook__cancel {
+  background-color: #b8b8b8;
+  color: black;
+}
+
+.addImg {
+  margin-top: 1rem;
+  display: grid;
+  justify-items: center;
+}
+.addImg__img {
+  width: 50vw;
+  height: 60vw;
+  background-color: #e7e7e7;
+  text-align: center;
+  padding-top: 40vw;
+  border-radius: 4px;
+}
+.addImg__btn {
+  background-color: grey;
+}
+@media (min-width: 768px) {
+  .addBook__wrapper {
+    display: grid;
+    grid-template-columns: max-content 1fr 1fr 1fr max-content;
+    grid-template-rows: 1fr 1fr 5fr 1fr 1fr;
+  }
+}
 
 /*# sourceMappingURL=index.css.map */

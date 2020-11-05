@@ -7,6 +7,80 @@
   <link rel="stylesheet" href="./assets/styles/index.css">
 </head>
 <body>
-  hi
+  <!-- Nav Bar -->
+  <!-- <nav class="nav">
+    <a href="#" class="nav__link nav__title">Library City</a href="#">
+    <ul class="nav__nav-list">
+      <li class="nav__nav-item"><a href="#" class="nav__link nav__link--small">Home</a></li>
+      <li class="nav__nav-item"><a href="#" class="nav__link nav__link--small">Bookshelf</a></li>
+      <li class="nav__nav-item"><a href="#" class="nav__link nav__link--small">Add Book</a></li>
+      <li class="nav__nav-item"><label for="search"></label><input id='search' type="text" class="nav__search"></li>
+      <li class="nav__nav-item"><button class="nav__btn">Search</button></li>
+    </ul>
+    <span class="nav__burger-btn" onclick="toggle()">
+      <input type="checkbox" />
+      <div class="nav__slice"></div>
+      <div class="nav__slice"></div>
+      <div class="nav__slice"></div>
+    </span>
+  </nav> -->
+
+  <!-- Home Body -->
+  <!-- <main class="whatAreWe">
+    <img src="./assets/images/library1.jpg" alt="library" class="whatAreWe__img">
+    <div class="whatAreWe__container">
+    <h1 class="whatAreWe__intro whatAreWe__text">Books...</h1>
+    <q class="whatAreWe__message whatAreWe__text">Reading one book is like eating one potato chip.</q>
+    <author class="whatAreWe__reference whatAreWe__text">– Diane Duane</author>
+    </div>
+  </main>
+  <section class="cta">
+    <h2 class="cta__welcome">Welcome to Library City</h2>
+    <p class="cta__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <button class="cta__btn">See a book</button>
+    <p class="cta__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <button class="cta__btn">Add book</button>
+</section> -->
+  
+<!-- Add Book -->
+<form class="addBook" action=''>
+  <h1 class="addBook__detail">Add Book</h1>
+  <div class="addBook__wrapper">
+    <label for="title" class="addBook__label addBook__title--label">Title</label>
+    <input id='title' type="text" class="addBook__title--input">
+    <label for="author" class="addBook__label addBook__author--label">Author</label>
+    <input id='author' type="text" class="addBook__author--input">
+    <div class="addImg">
+      <img src="" alt="Add Image" class="addImg__img">
+      <button class="addBook__btn addImg__btn" >Add Image</button>
+    </div>
+    <label for="synopsis" class="addBook__label addBook__synopsis--label">Synopsis</label>
+    <textarea id='synopsis' class="addBook__synopsis--textarea" name="synopsis" rows="10"></textarea>
+    <label for="published" class="addBook__label addBook__published--label">Published</label>
+    <input id='published' type="date" class="addBook__published--input">
+    <label for="numPages" class="addBook__label addBook__numPages--label">Pages</label>
+    <input id='numPages' type="number" class="addBook__numPages--input">
+    <label for="rating" class="addBook__label">Rating</label>
+    <div id='rating' class="addBook__rating">*****</div>
+  </div>
+  <div class="addBook__wrapper addBook__wrapper--action">
+    <button class="addBook__btn addBook__submit">Submit</button>
+    <button class="addBook__btn addBook__cancel">Cancel</button>
+  </div>
+</form>
+
+
+<!-- Footer --> 
+  <!-- <footer class="footer">
+    <p class="footer__text">&copy; Copyright 2020 Library City</p>
+  </footer> -->
+
+
+  <script>
+    function toggle() {
+      document.querySelector('.nav__nav-list').classList.toggle('invisible');
+    }
+
+  </script>
 </body>
 </html>
