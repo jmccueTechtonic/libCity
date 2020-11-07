@@ -1,0 +1,48 @@
+$color-main0: rgb(29, 31, 58); // dark blue
+$color-main5: black;
+
+$color-main2: rgb(190, 190, 190); // medium grey
+$color-main3: rgb(236, 236, 236); // light grey
+$color-main1: white;
+
+$color-danger: salmon; // danger color
+$color-find: teal;
+$color-star: yellow;
+
+@mixin btn {
+}
+
+// Media Query
+/* 
+375px - 480px    sm-mobile
+769px - 1024px   md-laptop
+1025px - 1200px  lg-laptop
+
+$breakpoint argument 
+
+sm
+
+md
+
+lg
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == sm {
+    @media only screen and (min-width: 375px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == md {
+    @media only screen and (min-width: 770px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == lg {
+    @media only screen and (min-width: 1025) {
+      @content;
+    }
+  }
+}

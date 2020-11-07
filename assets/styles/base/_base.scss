@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.page {
+  display: none;
+}
+.page:target {
+  display: block;
+}

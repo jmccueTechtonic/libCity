@@ -1,0 +1,223 @@
+.addBook {
+  width: 100vw;
+  &__detail {
+    text-align: center;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+
+    &--action {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 1rem;
+    }
+  }
+  &__label {
+    margin: 1rem 0 0.5rem 0;
+  }
+  &__title--label {
+  }
+  &__title--input {
+    width: 100%;
+    height: 1.75rem;
+  }
+  &__author--label {
+  }
+  &__author--input {
+    width: 100%;
+    height: 1.75rem;
+  }
+  &__synopsis--label {
+  }
+  &__synopsis--textarea {
+    box-sizing: border-box;
+    padding: 1rem;
+    width: 100%;
+    height: 30vh;
+  }
+  &__published--label {
+  }
+  &__published--input {
+    height: 1.75rem;
+  }
+  &__numPages--label {
+  }
+  &__numPages--input {
+    height: 1.75rem;
+  }
+  &__label {
+  }
+  &__rating {
+  }
+  &__btn {
+    margin: 0.5rem;
+
+    background-color: rgb(29, 31, 58);
+    color: white;
+    font-weight: 600;
+    font-size: 1.125rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+  }
+  &--submit {
+  }
+  &--cancel {
+    background-color: rgb(184, 184, 184);
+    color: black;
+  }
+  &--delete {
+    background-color: $color-danger;
+  }
+}
+
+.addImg {
+  margin-top: 1rem;
+  display: grid;
+  justify-items: center;
+  &__img {
+    width: 50vw;
+    height: 60vw;
+    background-color: rgb(231, 231, 231);
+    text-align: center;
+    border-radius: 4px;
+  }
+  &__btn {
+    background-color: grey;
+    margin-top: 1rem;
+  }
+  &__input {
+  }
+}
+
+@media (min-width: 768px) {
+  .addBook {
+    &__detail {
+    }
+    &__wrapper {
+      align-items: start;
+      padding: 0 2rem;
+
+      display: grid;
+      grid-template-columns: max-content max-content repeat(2, 13vw) 1fr;
+      grid-template-rows: 2rem 2rem 13rem 2rem 2rem;
+      grid-gap: 1rem 2rem;
+      align-items: center;
+
+      &--action {
+        margin-top: 2rem;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-gap: 2rem;
+        grid-template-columns: repeat(3, max-content);
+      }
+    }
+    &__label {
+      margin: 0;
+      justify-self: end;
+    }
+    &__title--label {
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 1;
+    }
+    &__title--input {
+      grid-column: 2 / span 3;
+      grid-row: 1 / span 1;
+      width: auto;
+      height: 100%;
+    }
+    &__author--label {
+      grid-column: 1 / span 1;
+      grid-row: 2 / span 1;
+    }
+    &__author--input {
+      grid-column: 2 / span 3;
+      grid-row: 2 / span 1;
+
+      width: auto;
+      height: 100%;
+    }
+    &__synopsis--label {
+      grid-column: 1 / span 1;
+      grid-row: 3 / span 1;
+    }
+    &__synopsis--textarea {
+      grid-column: 2 / span 3;
+      grid-row: 3 / span 1;
+      height: 100%;
+      width: 99%;
+    }
+    &__published--label {
+      grid-column: 1 / span 1;
+      grid-row: 4 / span 1;
+    }
+    &__published--input {
+      height: 100%;
+      grid-column: 2 / span 1;
+      grid-row: 4 / span 1;
+    }
+    &__numPages--label {
+      grid-column: 3 / span 1;
+      grid-row: 4 / span 1;
+    }
+    &__numPages--input {
+      height: 100%;
+    }
+    &__label {
+    }
+    &__rating {
+      display: flex;
+      justify-content: space-evenly;
+    }
+    &__btn {
+      margin: 0.5rem;
+
+      background-color: rgb(29, 31, 58);
+      color: white;
+      font-weight: 600;
+      font-size: 1.125rem;
+      padding: 0.5rem 1.5rem;
+      border-radius: 5px;
+    }
+    &--submit {
+    }
+    &--cancel {
+      background-color: rgb(184, 184, 184);
+      color: black;
+    }
+    &--delete {
+      background-color: $color-danger;
+    }
+  }
+
+  .addImg {
+    grid-column: 5 / span 1;
+    grid-row: 1 / span 4;
+
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr max-content;
+    justify-items: center;
+    align-items: center;
+    margin: 0;
+    &__img {
+      padding-top: 0;
+      width: 100%;
+      max-width: 15rem;
+      height: 100%;
+      background-color: rgb(231, 231, 231);
+      text-align: center;
+    }
+    &__btn {
+      background-color: grey;
+      text-align: center;
+    }
+    &__input {
+    }
+  }
+}
