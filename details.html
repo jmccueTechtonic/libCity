@@ -1,21 +1,60 @@
-<!-- Details -->
-<section class="details">
-  <h3 class="details__intro">Watership Down</h3>
-  <img src="./assets/images/book_cover.png" alt="book cover" class="details__img">
-  <author class="details__author">Richard Adams</author>
-  <div id='rating' class="details__rating">
-    <svg class="details__star star1"  fill="yellow" stroke="black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
-    <svg class="details__star star2"  fill="yellow" stroke="black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
-    <svg class="details__star star3"  fill="yellow" stroke="black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
-    <svg class="details__star star4"  fill="yellow" stroke="black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
-    <svg class="details__star star5"  fill="yellow" stroke="black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
-  </div>
-  <p class="details__published"><i>Published: June 1st 1975</i></p>
-  <p class="details__pages"><i>475 Pages</i></p>
-  <p class="details__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library City</title>
+  <link rel="stylesheet" href="./assets/styles/index.css">
+</head>
+<body>
+  
+ <!-- Nav Bar -->
+ <nav class="nav">
+  <a href="#" class="nav__link nav__title">Library City</a href="#">
+  <ul class="nav__nav-list">
+    <li class="nav__nav-item"><a href="#home" class="nav__link nav__link--small">Home</a></li>
+    <li class="nav__nav-item"><a href="#books" class="nav__link nav__link--small">Bookshelf</a></li>
+    <li class="nav__nav-item"><a href="#add" class="nav__link nav__link--small">Add Book</a></li>
+    <li class="nav__nav-item"><label for="search"></label><input id='search' type="text" class="nav__search" placeholder="Author/Book"></li>
+    <li class="nav__nav-item"><button class="nav__btn">Search</button></li>
+  </ul>
+  <span class="nav__burger-btn" onclick="document.querySelector('.nav__nav-list').classList.toggle('invisible')">
+    <div class="nav__slice"></div>
+    <div class="nav__slice"></div>
+    <div class="nav__slice"></div>
+  </span>
+</nav>
 
-  <div class="details__wrapper">
-    <button class="details__btn details__edit">Edit This Book</button>
-    <button class="details__btn details__shelf">Back To Shelf</button>
-  </div>
+<!-- Details -->
+
+<div id="details page">
+  <section class="details">
+    <h3 class="details__intro">Watership Down</h3>
+    <img src="./assets/images/book_cover.png" alt="book cover" class="details__img">
+    <author class="details__author">Richard Adams</author>
+    <div id='rating' class="details__rating">
+      <svg class="details__star star1"  fill="yellow" stroke="black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+      <svg class="details__star star2"  fill="yellow" stroke="black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+      <svg class="details__star star3"  fill="yellow" stroke="black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+      <svg class="details__star star4"  fill="yellow" stroke="black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+      <svg class="details__star star5"  fill="yellow" stroke="black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+    </div>
+    <p class="details__published"><i>Published: June 1st 1975</i></p>
+    <p class="details__pages"><i>475 Pages</i></p>
+    <p class="details__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </section>
+  
+    <div class="details__wrapper">
+      <button class="details__btn details__edit">Edit This Book</button>
+      <button class="details__btn details__shelf">Back To Shelf</button>
+    </div>
+</div>
+  
+
+<!-- Footer --> 
+<footer class="footer">
+  <p class="footer__text">&copy; Copyright 2020 Library City</p>
+</footer>
+
+</body>
+</html>

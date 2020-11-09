@@ -1,18 +1,60 @@
 .btn {
-  background-color: $color-main0;
-  color: $color-main1;
   font-weight: 600;
   font-size: 1.125rem;
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 2rem;
   border-radius: 5px;
-
-  &--setting-cancel {
+  border: 1px solid transparent;
+  transition: all 0.3s;
+  &:hover {
+    transform: scale(1.001) translateY(-0.45rem);
+    box-shadow: 0 0.5rem 1.4rem rgba(0, 0, 0, 0.75);
   }
+  &:active {
+    transform: scale(1) translateY(0);
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.75);
+  }
+
+  &--success {
+    // Success
+    background-color: $color-main0;
+    color: $color-main1;
+
+    &:hover {
+      background-color: $color-main1;
+      color: $color-main0;
+    }
+  }
+
+  &--setting-one {
+    // Cancel
+    background-color: $color-main3;
+    color: $color-main5;
+
+    &:hover {
+      background-color: $color-main6;
+      color: $color-main3;
+    }
+  }
+
   &--setting-two {
+    // Add / Change Image
+    background-color: $color-main2;
+    color: $color-main1;
+
+    &:hover {
+      background-color: $color-main1;
+      color: $color-main2;
+    }
   }
   &--setting-danger {
+    // Delete / Danger
     background-color: $color-main1;
     color: $color-danger;
     border-color: $color-danger;
+
+    &:hover {
+      background-color: $color-danger;
+      color: $color-main1;
+    }
   }
 }

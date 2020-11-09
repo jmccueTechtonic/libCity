@@ -1,13 +1,14 @@
-$color-main0: rgb(29, 31, 58); // dark blue
+$color-main0: rgb(39, 44, 49); // dark blue
 $color-main5: black;
 
-$color-main2: rgb(190, 190, 190); // medium grey
-$color-main3: rgb(236, 236, 236); // light grey
+$color-main6: rgb(89, 99, 105); // dark grey
+$color-main2: rgb(117, 130, 138); // medium grey
+$color-main3: rgb(233, 233, 233); // light grey
 $color-main1: white;
 
 $color-danger: salmon; // danger color
-$color-find: teal;
-$color-star: yellow;
+$color-find: rgb(35, 112, 128);
+$color-star: rgb(248, 255, 14);
 
 @mixin btn {
 }
@@ -35,7 +36,7 @@ lg
   }
 
   @if $breakpoint == md {
-    @media only screen and (min-width: 770px) {
+    @media only screen and (min-width: 768px) {
       @content;
     }
   }

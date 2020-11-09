@@ -1,27 +1,29 @@
 .invisible {
-  transform: translateX(0%) !important;
-  height: max-content !important;
   display: grid !important;
-  justify-content: center;
   justify-items: center;
   align-items: center;
   grid-gap: 1rem;
-  transition: all 0.3s !important;
+  padding-bottom: 1rem !important;
+  height: 100% !important;
 }
 
 .nav {
-  background-color: rgb(29, 31, 58);
+  background-color: $color-main0;
   padding: 0 2rem;
+  position: relative;
 
   display: grid;
   align-items: center;
   grid-template-columns: 1fr max-content;
-  grid-template-rows: 4rem max-content;
+  grid-template-rows: 4rem min-content;
   align-items: center;
+
+  @include respond(lg) {
+    padding: 3rem;
+  }
 
   &__title {
     font-size: 1.2rem;
-    background-color: rgb(29, 31, 58);
     grid-row: 1 / span 1;
     grid-column: 1 / span 1;
   }
@@ -30,12 +32,20 @@
     grid-row: 2 / span 1;
     grid-column: 1 / span 2;
 
-    transition: all 0.3s;
-    padding: 1rem;
-    margin: 0;
-    transform: translateX(-150%);
     display: none;
-    transition: all 0.3s !important;
+
+    @include respond(md) {
+      grid-row: 1 / span 1;
+      grid-column: 2 / span 1;
+
+      padding: 0;
+      margin: 0;
+      transform: translateX(0%);
+
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
   }
 
   &__nav-item {
@@ -46,26 +56,26 @@
     color: white;
     text-decoration: none;
 
-    &:target {
-      display: block;
-    }
     &--small {
     }
   }
 
   &__search {
+    @include respond(md) {
+      width: 15vw;
+    }
   }
 
   &__btn {
     background-color: transparent;
-    color: teal;
-    border: 1px solid teal;
+    color: $color-find;
+    border: 1px solid $color-find;
     border-radius: 4px;
     padding: 5px;
   }
 
   &__burger-btn {
-    background-color: rgb(29, 31, 58);
+    background-color: $color-main0;
     grid-row: 1 / span 1;
     grid-column: 2 / span 1;
 
@@ -74,8 +84,8 @@
     align-items: center;
     justify-content: center;
 
-    & input:checked body {
-      background-color: aqua;
+    @include respond(md) {
+      display: none;
     }
   }
 
@@ -89,75 +99,5 @@
     background-color: rgb(185, 185, 185);
     border-radius: 20%;
     cursor: pointer;
-  }
-}
-
-input:checked ~ div,
-input:checked * {
-  opacity: 1;
-  // transform: rotate(45deg) translate(-2px, -1px);
-  background-color: orange;
-  color: orange;
-}
-
-@media (min-width: 425px) {
-  .nav {
-    background-color: rgb(29, 31, 58);
-    padding: 0 0.5rem;
-
-    display: grid;
-    align-items: center;
-    grid-template-columns: max-content 1fr;
-    grid-template-rows: 4rem;
-
-    &__title {
-    }
-
-    &__nav-list {
-      grid-row: 1 / span 1;
-      grid-column: 2 / span 1;
-
-      padding: 0;
-      margin: 0;
-      transform: translateX(0%);
-
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-    }
-
-    &__nav-item {
-    }
-
-    &__link {
-      &--small {
-      }
-    }
-
-    &__search {
-      width: 15vw;
-    }
-
-    &__btn {
-    }
-
-    &__burger-btn {
-      display: none;
-
-      & input {
-      }
-
-      & input:checked &__nav-list {
-      }
-
-      & input:checked body {
-      }
-    }
-
-    &__press {
-    }
-
-    &__slice {
-    }
   }
 }

@@ -31,10 +31,10 @@
   grid-gap: 0.5rem;
 
   &--wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 12rem);
+    justify-content: center;
+    grid-gap: 2rem 3rem;
   }
 
   &__img {
@@ -42,6 +42,8 @@
   }
   &__title {
     margin: 0;
+    font-size: 1.2rem;
+    font-weight: 400;
   }
   &__author {
   }

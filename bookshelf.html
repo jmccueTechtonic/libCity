@@ -1,6 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library City</title>
+  <link rel="stylesheet" href="./assets/styles/index.css">
+</head>
+<body>
+  
+ <!-- Nav Bar -->
+ 
+ <nav class="nav">
+  <a href="#" class="nav__link nav__title">Library City</a href="#">
+  <ul class="nav__nav-list">
+    <li class="nav__nav-item"><a href="#home" class="nav__link nav__link--small">Home</a></li>
+    <li class="nav__nav-item"><a href="#books" class="nav__link nav__link--small">Bookshelf</a></li>
+    <li class="nav__nav-item"><a href="#add" class="nav__link nav__link--small">Add Book</a></li>
+    <li class="nav__nav-item"><label for="search"></label><input id='search' type="text" class="nav__search" placeholder="Author/Book"></li>
+    <li class="nav__nav-item"><button class="nav__btn">Search</button></li>
+  </ul>
+  <span class="nav__burger-btn" onclick="document.querySelector('.nav__nav-list').classList.toggle('invisible')">
+    <div class="nav__slice"></div>
+    <div class="nav__slice"></div>
+    <div class="nav__slice"></div>
+  </span>
+</nav>
+
 <!-- Search All Books -->
 
-<section class="search">
+<section id="books" class="search page">
   <label for="booksSearch" class="search__searchBar--label">
     <input id="booksSearch" type="search" class="search__searchBar--input" placeholder="Search by Author/Title">
   </label>
@@ -108,3 +136,11 @@
     </section>
   </div>
 </section>
+
+<!-- Footer --> 
+<footer class="footer">
+  <p class="footer__text">&copy; Copyright 2020 Library City</p>
+</footer>
+
+</body>
+</html>

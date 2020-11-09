@@ -1,0 +1,184 @@
+.formBook {
+  width: 100vw;
+  &__detail {
+    text-align: center;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+
+    @include respond(md) {
+      align-items: start;
+      padding: 0 2rem;
+
+      display: grid;
+      grid-template-columns: max-content max-content repeat(2, 13vw) 1fr;
+      grid-template-rows: 2rem 2rem 13rem 2rem 2rem;
+      grid-gap: 1rem 2rem;
+      align-items: center;
+    }
+
+    @include respond(lg) {
+      grid-template-columns: max-content max-content repeat(2, 13vw) max-content;
+    }
+
+    &--action {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center;
+
+      @include respond(md) {
+        margin-top: 2rem;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-gap: 2rem;
+        grid-template-columns: repeat(3, max-content);
+      }
+    }
+  }
+  &__label {
+    margin: 1rem 0 0.5rem 0;
+
+    @include respond(md) {
+      margin: 0;
+      justify-self: end;
+    }
+  }
+  &__title--label {
+    @include respond(md) {
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 1;
+    }
+  }
+  &__title--input {
+    width: 100%;
+    height: 1.75rem;
+
+    @include respond(md) {
+      grid-column: 2 / span 3;
+      grid-row: 1 / span 1;
+      width: auto;
+      height: 100%;
+    }
+  }
+  &__author--label {
+    @include respond(md) {
+      grid-column: 1 / span 1;
+      grid-row: 2 / span 1;
+    }
+  }
+  &__author--input {
+    width: 100%;
+    height: 1.75rem;
+
+    @include respond(md) {
+      grid-column: 2 / span 3;
+      grid-row: 2 / span 1;
+
+      width: auto;
+      height: 100%;
+    }
+  }
+  &__synopsis--label {
+    @include respond(md) {
+      grid-column: 1 / span 1;
+      grid-row: 3 / span 1;
+    }
+  }
+  &__synopsis--textarea {
+    box-sizing: border-box;
+    padding: 1rem;
+    width: 100%;
+    height: 30vh;
+
+    @include respond(md) {
+      grid-column: 2 / span 3;
+      grid-row: 3 / span 1;
+      height: 100%;
+    }
+  }
+  &__published--label {
+    @include respond(md) {
+      grid-column: 1 / span 1;
+      grid-row: 4 / span 1;
+    }
+  }
+  &__published--input {
+    height: 1.75rem;
+
+    @include respond(md) {
+      height: 100%;
+      grid-column: 2 / span 1;
+      grid-row: 4 / span 1;
+    }
+  }
+  &__numPages--label {
+    @include respond(md) {
+      grid-column: 3 / span 1;
+      grid-row: 4 / span 1;
+    }
+  }
+  &__numPages--input {
+    height: 1.75rem;
+
+    @include respond(md) {
+      height: 100%;
+    }
+  }
+  &__label {
+  }
+  &__rating {
+    @include respond(md) {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+  &__btn {
+    margin-top: 1rem;
+  }
+}
+
+.formImg {
+  margin-top: 1rem;
+  display: grid;
+  justify-items: center;
+
+  @include respond(md) {
+    grid-column: 5 / span 1;
+    grid-row: 1 / span 4;
+
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr max-content;
+    justify-items: center;
+    align-items: center;
+    margin: 0;
+  }
+
+  @include respond(lg) {
+    width: max-content;
+  }
+  &__img {
+    width: 50vw;
+    height: 60vw;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 0.8rem;
+
+    @include respond(md) {
+      padding-top: 0;
+      width: 100%;
+      max-width: 15rem;
+      height: 80%;
+    }
+  }
+  &__btn {
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem !important;
+    // font-size: 10px !important;
+  }
+}
