@@ -10,17 +10,11 @@
 .nav {
   background-color: $color-main0;
   padding: 0 2rem;
-  position: relative;
 
   display: grid;
   align-items: center;
   grid-template-columns: 1fr max-content;
   grid-template-rows: 4rem min-content;
-  align-items: center;
-
-  @include respond(lg) {
-    padding: 3rem;
-  }
 
   &__title {
     font-size: 1.2rem;
@@ -40,7 +34,7 @@
 
       padding: 0;
       margin: 0;
-      transform: translateX(0%);
+      width: 70vw !important;
 
       display: flex;
       justify-content: space-around;
@@ -50,6 +44,7 @@
 
   &__nav-item {
     list-style: none;
+    padding: 0 1rem;
   }
 
   &__link {
