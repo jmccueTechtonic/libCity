@@ -423,7 +423,7 @@ body {
   font-style: italic;
   color: grey;
 }
-.invisible {
+.visible {
   display: grid !important;
   justify-items: center;
   align-items: center;
