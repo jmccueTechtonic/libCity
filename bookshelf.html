@@ -34,7 +34,7 @@
   </label>
   <h1 class="search__intro">Release the Kraken of Knowledge</h1>
   <div class="card--wrapper">
-    <section class="card">
+    <!-- <section class="card">
       <img src="./assets/images/book_cover.png" alt="Book Cover" class="card__img">
       <p class="card__title">A great long title Watership Down</p>
       <author class="card__author">A great long first and last name</author>
@@ -134,13 +134,49 @@
       <p class="card__title">Watership Down</p>
       <author class="card__author">Richard Adams</author>
     </section>
-  </div>
+  </div> -->
 </section>
 
 <!-- Footer --> 
 <footer class="footer">
   <p class="footer__text">&copy; Copyright 2020 Library City</p>
 </footer>
+<script>
 
+const obj = {
+  title: "A great journey",
+  author: "Tarzan",
+  src: "./assets/images/book_cover.png"
+}
+
+const obj1 = {
+  title: "A Long Great Title",
+  author: "A glorious long name",
+  src: "./assets/images/book_cover.png"
+}
+    const buildHtmlCard = (card) => {
+      const cardHtml = ` 
+      <section class="card">
+        <img src=${card.src} alt=${card.title} class="card__img">
+        <p class="card__title">${card.title}</p>
+        <author class="card__author">${card.author}</author>
+      </section>`
+    document.querySelector('.card--wrapper').insertAdjacentHTML('beforeend', cardHtml);
+    }
+
+    buildHtmlCard(obj);
+    buildHtmlCard(obj);
+    buildHtmlCard(obj);
+    buildHtmlCard(obj);
+    buildHtmlCard(obj);
+    buildHtmlCard(obj);
+    buildHtmlCard(obj1);
+    buildHtmlCard(obj1);
+    buildHtmlCard(obj1);
+    buildHtmlCard(obj1);
+    buildHtmlCard(obj1);
+    buildHtmlCard(obj1);
+
+</script>
 </body>
 </html>
