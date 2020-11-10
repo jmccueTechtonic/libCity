@@ -67,6 +67,25 @@
 <footer class="footer">
   <p class="footer__text">&copy; Copyright 2020 Library City</p>
 </footer>
+<script>
+  function updateRating() {
+    document.querySelector('.formBook__rating').addEventListener('click', (e) => {
+      const allSvgs = document.querySelectorAll('.formBook__star');
+      const svg = e.target.parentElement;
+      const svgNumber = +(svg.id.split('star')[1]);
 
+      const setRating = (num = 5, color = "rgb(223, 223, 223)") => {
+        allSvgs.forEach((el, i) => {
+        if (i < num) {
+          el.setAttribute('fill', color);
+        }
+      });
+      }
+      setRating(); // turn all stars off
+      setRating(svgNumber, 'yellow') // turn on only clicked amount of stars
+    });
+  }
+  updateRating();
+</script>
 </body>
 </html>
