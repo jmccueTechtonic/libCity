@@ -137,6 +137,9 @@
     }
   }
   &__star {
+    &--hover {
+      fill: yellow !important;
+    }
   }
 
   &__btn {

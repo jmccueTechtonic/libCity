@@ -246,6 +246,9 @@ body {
     justify-content: space-evenly;
   }
 }
+.formBook__star--hover {
+  fill: yellow !important;
+}
 .formBook__btn {
   margin-top: 1rem;
 }
