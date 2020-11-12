@@ -113,12 +113,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 1rem;
+  padding: 0 10%;
 }
 @media only screen and (min-width: 768px) {
   .formBook__wrapper {
     align-items: start;
-    padding: 0 2rem;
+    padding: 0 8vw;
     display: grid;
     grid-template-columns: max-content max-content repeat(2, 13vw) 1fr;
     grid-template-rows: 2rem 2rem 13rem 2rem 2rem;
@@ -287,7 +287,7 @@ body {
   .formImg__img {
     padding-top: 0;
     width: 100%;
-    max-width: 15rem;
+    max-width: 12rem;
     height: 80%;
   }
 }
@@ -347,7 +347,7 @@ body {
   transition: all 0.3s;
 }
 .btn:hover {
-  transform: scale(1.001) translateY(-0.45rem);
+  transform: scale(1.001) translateY(-0.35rem);
   box-shadow: 0 0.5rem 1.4rem rgba(0, 0, 0, 0.75);
 }
 .btn:active {
@@ -358,32 +358,35 @@ body {
   background-color: #272c31;
   color: white;
 }
-.btn--success:hover {
+.btn--success:hover, .btn--success:focus {
   background-color: white;
   color: #272c31;
+  border: 3px solid #272c31;
 }
 .btn--setting-one {
   background-color: #e9e9e9;
   color: black;
 }
-.btn--setting-one:hover {
+.btn--setting-one:hover, .btn--setting-one:focus {
   background-color: #596369;
   color: #e9e9e9;
+  border: 3px solid #e9e9e9;
 }
 .btn--setting-two {
   background-color: #75828a;
   color: white;
 }
-.btn--setting-two:hover {
+.btn--setting-two:hover, .btn--setting-two:focus {
   background-color: white;
   color: #75828a;
+  border: 3px solid #75828a;
 }
 .btn--setting-danger {
   background-color: white;
   color: salmon;
   border-color: salmon;
 }
-.btn--setting-danger:hover {
+.btn--setting-danger:hover, .btn--setting-danger:focus {
   background-color: salmon;
   color: white;
 }
@@ -438,6 +441,7 @@ body {
 .nav {
   background-color: #272c31;
   padding: 0 2rem;
+  position: relative;
   display: grid;
   align-items: center;
   grid-template-columns: 1fr max-content;

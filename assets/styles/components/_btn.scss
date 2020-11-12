@@ -6,7 +6,7 @@
   border: 1px solid transparent;
   transition: all 0.3s;
   &:hover {
-    transform: scale(1.001) translateY(-0.45rem);
+    transform: scale(1.001) translateY(-0.35rem);
     box-shadow: 0 0.5rem 1.4rem rgba(0, 0, 0, 0.75);
   }
   &:active {
@@ -19,9 +19,11 @@
     background-color: $color-main0;
     color: $color-main1;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: $color-main1;
       color: $color-main0;
+      border: 3px solid $color-main0;
     }
   }
 
@@ -30,20 +32,24 @@
     background-color: $color-main3;
     color: $color-main5;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: $color-main6;
       color: $color-main3;
+      border: 3px solid $color-main3;
     }
   }
 
   &--setting-two {
-    // Add / Change Image
+    // Add / Change
     background-color: $color-main2;
     color: $color-main1;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: $color-main1;
       color: $color-main2;
+      border: 3px solid $color-main2;
     }
   }
   &--setting-danger {
@@ -52,7 +58,8 @@
     color: $color-danger;
     border-color: $color-danger;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: $color-danger;
       color: $color-main1;
     }

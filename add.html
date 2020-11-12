@@ -65,21 +65,47 @@
 </footer>
 <script>
   function updateRating() {
-    document.querySelector('.formBook__rating').addEventListener('click', (e) => {
-      const allSvgs = document.querySelectorAll('.formBook__star');
-      const svg = e.target.parentElement;
-      const svgNumber = +(svg.id.split('star')[1]);
+    
+    function ratingHandler(action) {
+      document.querySelector('.formBook__rating').addEventListener(action, e => {
+        const allStars = document.querySelectorAll('.formBook__star');
+        const svg = e.target.parentElement;
+        const starNumber = +(svg.id.split('star')[1]);
 
-      const setRating = (num = 5, color = "rgb(223, 223, 223)") => {
-        allSvgs.forEach((el, i) => {
-        if (i < num) {
-          el.setAttribute('fill', color);
+        if (action === 'mouseover') {
+          allStars.forEach((el, i) => {
+            if (i < starNumber) {
+              el.classList.add('formBook__star--hover');
+            }
+          });
         }
+
+        if (action === 'mouseleave') {
+          allStars.forEach((el, i) => {
+            if (i < 5) {
+              el.classList.remove('formBook__star--hover');
+            }
+          });
+        }
+
+        if (action === 'click') {
+          const setRating = (num, color) => {
+            allStars.forEach((el, i) => {
+            if (i < num) {
+              el.setAttribute('fill', color);
+            }
+          });
+          }
+          setRating(5, "rgb(223, 223, 223)"); // turn OFF all stars
+          setRating(starNumber, 'yellow') // turn ON only clicked amount of stars
+        }
+
       });
-      }
-      setRating(); // turn all stars off
-      setRating(svgNumber, 'yellow') // turn on only clicked amount of stars
-    });
+    }
+
+    ratingHandler('mouseover'); // hover - adds class to target stars
+    ratingHandler('mouseleave'); // leave - removes class when leaving parent element
+    ratingHandler('click'); // click - alters fill attribute
   }
   updateRating();
 </script>

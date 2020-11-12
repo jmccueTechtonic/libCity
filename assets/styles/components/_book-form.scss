@@ -7,11 +7,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 1rem;
+    padding: 0 10%;
 
     @include respond(md) {
       align-items: start;
-      padding: 0 2rem;
+      padding: 0 8vw;
 
       display: grid;
       grid-template-columns: max-content max-content repeat(2, 13vw) 1fr;
@@ -178,7 +178,7 @@
     @include respond(md) {
       padding-top: 0;
       width: 100%;
-      max-width: 15rem;
+      max-width: 12rem;
       height: 80%;
     }
   }
