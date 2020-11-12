@@ -400,7 +400,6 @@ body {
   transition: 0.4s;
   background-color: #b9b9b9;
   border-radius: 20%;
-  cursor: pointer;
 }
 
 .changeBurger .burger1 {
@@ -526,6 +525,7 @@ body {
 }
 .nav__burger-btn {
   padding: 0 2rem;
+  cursor: pointer;
   background-color: #272c31;
   grid-row: 1/span 1;
   grid-column: 2/span 1;

@@ -84,6 +84,7 @@
 
   &__burger-btn {
     padding: 0 2rem;
+    cursor: pointer;
     background-color: $color-main0;
     grid-row: 1 / span 1;
     grid-column: 2 / span 1;
