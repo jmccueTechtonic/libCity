@@ -1,0 +1,23 @@
+.burger1,
+.burger2,
+.burger3 {
+  width: 35px;
+  height: 5px;
+  margin: 6px 0;
+  transition: 0.4s;
+  background-color: rgb(185, 185, 185);
+  border-radius: 20%;
+  cursor: pointer;
+}
+
+.changeBurger .burger1 {
+  transform: rotate(-45deg) translate(-15px, 6px);
+}
+
+.changeBurger .burger2 {
+  opacity: 0;
+}
+
+.changeBurger .burger3 {
+  transform: rotate(45deg) translate(-17px, -8px);
+}

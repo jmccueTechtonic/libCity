@@ -391,6 +391,30 @@ body {
   color: white;
 }
 
+.burger1,
+.burger2,
+.burger3 {
+  width: 35px;
+  height: 5px;
+  margin: 6px 0;
+  transition: 0.4s;
+  background-color: #b9b9b9;
+  border-radius: 20%;
+  cursor: pointer;
+}
+
+.changeBurger .burger1 {
+  transform: rotate(-45deg) translate(-15px, 6px);
+}
+
+.changeBurger .burger2 {
+  opacity: 0;
+}
+
+.changeBurger .burger3 {
+  transform: rotate(45deg) translate(-17px, -8px);
+}
+
 .whatAreWe {
   height: 50vh;
   position: relative;
@@ -430,17 +454,11 @@ body {
   color: grey;
 }
 .visible {
-  display: grid !important;
-  justify-items: center;
-  align-items: center;
-  grid-gap: 1rem;
-  padding-bottom: 1rem !important;
-  height: 100% !important;
+  transform: scale(1.125) !important;
 }
 
 .nav {
   background-color: #272c31;
-  padding: 0 2rem;
   position: relative;
   display: grid;
   align-items: center;
@@ -451,11 +469,26 @@ body {
   font-size: 1.2rem;
   grid-row: 1/span 1;
   grid-column: 1/span 1;
+  padding: 0 2rem;
 }
 .nav__nav-list {
   grid-row: 2/span 1;
   grid-column: 1/span 2;
-  display: none;
+  display: grid;
+  height: max-content;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #272c31;
+  transform: scale(0);
+  transition: all 0.4s ease;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-gap: 1rem;
+  padding-bottom: 1rem;
 }
 @media only screen and (min-width: 768px) {
   .nav__nav-list {
@@ -463,10 +496,12 @@ body {
     grid-column: 2/span 1;
     padding: 0;
     margin: 0;
-    width: 70vw !important;
+    width: 77vw !important;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    position: relative;
+    transform: scale(1);
   }
 }
 .nav__nav-item {
@@ -490,6 +525,7 @@ body {
   padding: 5px;
 }
 .nav__burger-btn {
+  padding: 0 2rem;
   background-color: #272c31;
   grid-row: 1/span 1;
   grid-column: 2/span 1;
@@ -503,15 +539,6 @@ body {
     display: none;
   }
 }
-.nav__slice {
-  height: 0.25rem;
-  margin: 5px 0;
-  width: 2rem;
-  background-color: #b9b9b9;
-  border-radius: 20%;
-  cursor: pointer;
-}
-
 .footer {
   margin: 1rem 0 0 0;
   display: flex;

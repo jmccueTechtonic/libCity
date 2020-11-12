@@ -1,15 +1,9 @@
 .visible {
-  display: grid !important;
-  justify-items: center;
-  align-items: center;
-  grid-gap: 1rem;
-  padding-bottom: 1rem !important;
-  height: 100% !important;
+  transform: scale(1.125) !important;
 }
 
 .nav {
   background-color: $color-main0;
-  padding: 0 2rem;
   position: relative;
 
   display: grid;
@@ -21,13 +15,29 @@
     font-size: 1.2rem;
     grid-row: 1 / span 1;
     grid-column: 1 / span 1;
+    padding: 0 2rem;
   }
 
   &__nav-list {
     grid-row: 2 / span 1;
     grid-column: 1 / span 2;
 
-    display: none;
+    display: grid;
+    height: max-content;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $color-main0;
+    transform: scale(0);
+    transition: all 0.4s ease;
+
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-gap: 1rem;
+    padding-bottom: 1rem;
 
     @include respond(md) {
       grid-row: 1 / span 1;
@@ -35,11 +45,13 @@
 
       padding: 0;
       margin: 0;
-      width: 70vw !important;
+      width: 77vw !important;
 
       display: flex;
       justify-content: space-around;
       align-items: center;
+      position: relative;
+      transform: scale(1);
     }
   }
 
@@ -71,6 +83,7 @@
   }
 
   &__burger-btn {
+    padding: 0 2rem;
     background-color: $color-main0;
     grid-row: 1 / span 1;
     grid-column: 2 / span 1;
@@ -89,11 +102,5 @@
   }
 
   &__slice {
-    height: 0.25rem;
-    margin: 5px 0;
-    width: 2rem;
-    background-color: rgb(185, 185, 185);
-    border-radius: 20%;
-    cursor: pointer;
   }
 }
