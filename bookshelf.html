@@ -8,23 +8,22 @@
 </head>
 <body>
   
- <!-- Nav Bar -->
- 
- <nav class="nav">
-  <a href="#" class="nav__link nav__title">Library City</a href="#">
-  <ul class="nav__nav-list">
-    <li class="nav__nav-item"><a href="#home" class="nav__link nav__link--small">Home</a></li>
-    <li class="nav__nav-item"><a href="#books" class="nav__link nav__link--small">Bookshelf</a></li>
-    <li class="nav__nav-item"><a href="#add" class="nav__link nav__link--small">Add Book</a></li>
-    <li class="nav__nav-item"><label for="search"></label><input id='search' type="text" class="nav__search" placeholder="Author/Book"></li>
-    <li class="nav__nav-item"><button class="nav__btn">Search</button></li>
-  </ul>
-  <span class="nav__burger-btn" onclick="document.querySelector('.nav__nav-list').classList.toggle('visible')">
-    <div class="nav__slice"></div>
-    <div class="nav__slice"></div>
-    <div class="nav__slice"></div>
-  </span>
-</nav>
+  <!-- Nav Bar -->
+  <nav class="nav">
+    <a href="#" class="nav__link nav__title">Library City</a href="#">
+    <ul class="nav__nav-list">
+      <li class="nav__nav-item"><a href="#home" class="nav__link nav__link--small">Home</a></li>
+      <li class="nav__nav-item"><a href="#books" class="nav__link nav__link--small">Bookshelf</a></li>
+      <li class="nav__nav-item"><a href="#add" class="nav__link nav__link--small">Add Book</a></li>
+      <li class="nav__nav-item"><label for="search"></label><input id='search' type="text" class="nav__search" placeholder="Author/Book"></li>
+      <li class="nav__nav-item"><button class="nav__btn">Search</button></li>
+    </ul>
+    <span class="nav__burger-btn" onclick="burgerFunc(this)">
+      <div class="nav__slice burger1"></div>
+      <div class="nav__slice burger2"></div>
+      <div class="nav__slice burger3"></div>
+    </span>
+  </nav>
 
 <!-- Search All Books -->
 
@@ -142,6 +141,10 @@
   <p class="footer__text">&copy; Copyright 2020 Library City</p>
 </footer>
 <script>
+   function burgerFunc(tag) {
+  document.querySelector('.nav__nav-list').classList.toggle('visible');
+  tag.classList.toggle('changeBurger');
+}
 
 const obj = {
   title: "A great journey",
