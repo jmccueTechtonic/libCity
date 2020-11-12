@@ -1,5 +1,5 @@
 .visible {
-  transform: scale(1.125) !important;
+  transform: translateX(0) !important;
 }
 
 .nav {
@@ -30,14 +30,14 @@
     left: 0;
     right: 0;
     background-color: $color-main0;
-    transform: scale(0);
+    transform: translateX(-100vw);
     transition: all 0.4s ease;
 
     display: grid;
     justify-items: center;
     align-items: center;
     grid-gap: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem 0;
 
     @include respond(md) {
       grid-row: 1 / span 1;
