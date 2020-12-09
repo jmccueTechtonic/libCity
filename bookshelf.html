@@ -32,121 +32,21 @@
     <input id="booksSearch" type="search" class="search__searchBar--input" placeholder="Search by Author/Title">
   </label>
   <h1 class="search__intro">Release the Kraken of Knowledge</h1>
-  <div class="card--wrapper">
-    <!-- <section class="card">
-      <img src="./assets/images/book_cover.png" alt="Book Cover" class="card__img">
-      <p class="card__title">A great long title Watership Down</p>
-      <author class="card__author">A great long first and last name</author>
-    </section>
-    <section class="card">
-      <img src="./assets/images/book_cover.png" alt="Book Cover" class="card__img">
-      <p class="card__title">Watership Down</p>
-      <author class="card__author">Richard Adams</author>
-    </section>
-    <section class="card">
-      <img src="./assets/images/book_cover.png" alt="Book Cover" class="card__img">
-      <p class="card__title">Watership Down</p>
-      <author class="card__author">Richard Adams</author>
-    </section>
-    <section class="card">
-      <img src="./assets/images/book_cover.png" alt="Book Cover" class="card__img">
-      <p class="card__title">Watership Down</p>
-      <author class="card__author">Richard Adams</author>
-    </section>
-    <section class="card">
-      <img src="./assets/images/book_cover.png" alt="Book Cover" class="card__img">
-      <p class="card__title">Watership Down</p>
-      <author class="card__author">Richard Adams</author>
-    </section>
-    <section class="card">
-      <img src="./assets/images/book_cover.png" alt="Book Cover" class="card__img">
-      <p class="card__title">Watership Down</p>
-      <author class="card__author">Richard Adams</author>
-    </section>
-    <section class="card">
-      <img src="./assets/images/book_cover.png" alt="Book Cover" class="card__img">
-      <p class="card__title">Watership Down</p>
-      <author class="card__author">Richard Adams</author>
-    </section>
-    <section class="card">
-      <img src="./assets/images/book_cover.png" alt="Book Cover" class="card__img">
-      <p class="card__title">Watership Down</p>
-      <author class="card__author">Richard Adams</author>
-    </section>
-    <section class="card">
-      <img src="./assets/images/book_cover.png" alt="Book Cover" class="card__img">
-      <p class="card__title">Watership Down</p>
-      <author class="card__author">Richard Adams</author>
-    </section>
-    <section class="card">
-      <img src="./assets/images/book_cover.png" alt="Book Cover" class="card__img">
-      <p class="card__title">Watership Down</p>
-      <author class="card__author">Richard Adams</author>
-    </section>
-    <section class="card">
-      <img src="./assets/images/book_cover.png" alt="Book Cover" class="card__img">
-      <p class="card__title">Watership Down</p>
-      <author class="card__author">Richard Adams</author>
-    </section>
-    <section class="card">
-      <img src="./assets/images/book_cover.png" alt="Book Cover" class="card__img">
-      <p class="card__title">Watership Down</p>
-      <author class="card__author">Richard Adams</author>
-    </section>
-    <section class="card">
-      <img src="./assets/images/book_cover.png" alt="Book Cover" class="card__img">
-      <p class="card__title">Watership Down</p>
-      <author class="card__author">Richard Adams</author>
-    </section>
-    <section class="card">
-      <img src="./assets/images/book_cover.png" alt="Book Cover" class="card__img">
-      <p class="card__title">Watership Down</p>
-      <author class="card__author">Richard Adams</author>
-    </section>
-    <section class="card">
-      <img src="./assets/images/book_cover.png" alt="Book Cover" class="card__img">
-      <p class="card__title">Watership Down</p>
-      <author class="card__author">Richard Adams</author>
-    </section>
-    <section class="card">
-      <img src="./assets/images/book_cover.png" alt="Book Cover" class="card__img">
-      <p class="card__title">Watership Down</p>
-      <author class="card__author">Richard Adams</author>
-    </section>
-    <section class="card">
-      <img src="./assets/images/book_cover.png" alt="Book Cover" class="card__img">
-      <p class="card__title">Watership Down</p>
-      <author class="card__author">Richard Adams</author>
-    </section>
-    <section class="card">
-      <img src="./assets/images/book_cover.png" alt="Book Cover" class="card__img">
-      <p class="card__title">Watership Down</p>
-      <author class="card__author">Richard Adams</author>
-    </section>
-    <section class="card">
-      <img src="./assets/images/book_cover.png" alt="Book Cover" class="card__img">
-      <p class="card__title">Watership Down</p>
-      <author class="card__author">Richard Adams</author>
-    </section>
-    <section class="card">
-      <img src="./assets/images/book_cover.png" alt="Book Cover" class="card__img">
-      <p class="card__title">Watership Down</p>
-      <author class="card__author">Richard Adams</author>
-    </section>
-  </div> -->
+  <div id="card--wrapper" class="card--wrapper">
+  </div> 
 </section>
 
 <!-- Footer --> 
 <footer class="footer">
   <p class="footer__text">&copy; Copyright 2020 Library City</p>
 </footer>
-<script>
-   function burgerFunc(tag) {
+<script >
+  function burgerFunc(tag) {
   document.querySelector('.nav__nav-list').classList.toggle('visible');
   tag.classList.toggle('changeBurger');
 }
 
-const obj = {
+  const obj = {
   title: "A great journey",
   author: "Tarzan",
   src: "./assets/images/book_cover.png"
@@ -157,29 +57,28 @@ const obj1 = {
   author: "A glorious long name",
   src: "./assets/images/book_cover.png"
 }
-    const buildHtmlCard = (card) => {
-      const cardHtml = ` 
-      <section class="card">
-        <img src=${card.src} alt=${card.title} class="card__img">
-        <p class="card__title">${card.title}</p>
-        <author class="card__author">${card.author}</author>
-      </section>`
-    document.querySelector('.card--wrapper').insertAdjacentHTML('beforeend', cardHtml);
-    }
+const buildHtmlCard = ({title, author, src}) => {
+  const cardHtml = ` 
+        <section class="card">
+          <img src=${src} alt=${title} class="card__img">
+          <p class="card__title">${title}</p>
+          <author class="card__author">${author}</author>
+        </section>`
+  document.querySelector('.card--wrapper').insertAdjacentHTML('beforeend', cardHtml);
+}
 
-    buildHtmlCard(obj);
-    buildHtmlCard(obj);
-    buildHtmlCard(obj);
-    buildHtmlCard(obj);
-    buildHtmlCard(obj);
-    buildHtmlCard(obj);
-    buildHtmlCard(obj1);
-    buildHtmlCard(obj1);
-    buildHtmlCard(obj1);
-    buildHtmlCard(obj1);
-    buildHtmlCard(obj1);
-    buildHtmlCard(obj1);
-
+buildHtmlCard(obj);
+buildHtmlCard(obj);
+buildHtmlCard(obj);
+buildHtmlCard(obj);
+buildHtmlCard(obj);
+buildHtmlCard(obj);
+buildHtmlCard(obj1);
+buildHtmlCard(obj1);
+buildHtmlCard(obj1);
+buildHtmlCard(obj1);
+buildHtmlCard(obj1);
+buildHtmlCard(obj1);
 </script>
 </body>
 </html>

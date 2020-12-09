@@ -10,18 +10,14 @@
     padding: 0 10%;
 
     @include respond(md) {
-      align-items: start;
-      padding: 0 8vw;
+      padding: 0;
 
       display: grid;
-      grid-template-columns: max-content max-content repeat(2, 13vw) 1fr;
+      grid-template-columns: repeat(5, max-content);
       grid-template-rows: 2rem 2rem 13rem 2rem 2rem;
       grid-gap: 1rem 2rem;
+      justify-content: center;
       align-items: center;
-    }
-
-    @include respond(lg) {
-      grid-template-columns: max-content max-content repeat(2, 13vw) max-content;
     }
 
     &--action {
@@ -177,14 +173,12 @@
 
     @include respond(md) {
       padding-top: 0;
-      width: 100%;
-      max-width: 12rem;
-      height: 80%;
+      width: auto;
+      max-height: 18rem;
     }
   }
   &__btn {
     margin-top: 1rem;
     padding: 0.5rem 1.5rem !important;
-    // font-size: 10px !important;
   }
 }
