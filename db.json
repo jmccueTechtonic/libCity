@@ -1,0 +1,104 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "ratings": 5,
+      "author": "Eckhart Tolle",
+      "title": "A New Earth: Awakening to Your Life's Purpose",
+      "description": "The highly anticipated follow-up to the 2,000,000 copy bestselling inspirational book, The Power of Now",
+      "pages": "300",
+      "publishDate": "2020-03-03",
+      "image": "./src/assets/images/newearth.jpg"
+    },
+    {
+      "id": 2,
+      "ratings": 5,
+      "author": "Paramahansa Yogananda",
+      "title": "Autobiography of a Yogi",
+      "description": " This acclaimed autobiography presents a fascinating portrait of one of the great spiritual figures of our time. With engaging candor, eloquence, and wit, Paramahansa Yogananda narrates the inspiring chronicle of his life",
+      "pages": "512",
+      "publishDate": "2020-03-01",
+      "image": "./src/assets/images/aoay.jpg"
+    },
+    {
+      "id": 3,
+      "ratings": 3,
+      "author": "Sri Yukteswar Giri",
+      "title": "Holy Science",
+      "description": "This extraordinary treatise explores parallel passages from the Bible and the Hindu scriptures to reveal the essential unity of all religions.",
+      "pages": 4,
+      "publishDate": "2020-03-03",
+      "image": "./src/assets/images/holys.jpg"
+    },
+    {
+      "id": 4,
+      "ratings": 2,
+      "author": "Harper Lee",
+      "title": "To Kill a Mockingbird",
+      "description": "the primary themes of To Kill a Mockingbird involve racial injustice and the destruction of innocence. Scholars have noted that Lee also addresses issues of class, courage, compassion, and gender roles in the Deep South. ",
+      "pages": 4,
+      "publishDate": "2020-03-03",
+      "image": "./src/assets/images/mockingbird.jpg"
+    },
+    {
+      "id": 5,
+      "ratings": 2,
+      "author": "Homer",
+      "title": "The Odyssey",
+      "description": "The Odyssey is one of two major ancient Greek epic poems attributed to Homer. It is one of the oldest extant works of literature still read by contemporary audiences. As with the Iliad, the poem is divided into 24 books. It follows the Greek hero Odysseus, king of Ithaca, and his journey home after the Trojan War.",
+      "pages": 4,
+      "publishDate": "2020-03-03",
+      "image": "./src/assets/images/odyssey.jpg"
+    },
+    {
+      "id": 6,
+      "ratings": 5,
+      "author": "Yogiraj Gurunath Siddhanath",
+      "title": "Babaji: Lightning standing still",
+      "description": " Babaji - The Lightning Standing Still The DEFINITIVE book on Babaji, His Divine work throughout the ages, and His secret avataric assistants. The most detailed and profound information about the Babaji mystery EVER to be revealed. ",
+      "pages": 504,
+      "publishDate": "2011-03-03",
+      "image": "./src/assets/images/babaji.jpg"
+    },
+    {
+      "id": 7,
+      "ratings": 2,
+      "author": "Homer",
+      "title": "Iliad",
+      "description": "Although the story covers only a few weeks in the final year of the war, the Iliad mentions or alludes to many of the Greek legends about the siege; the earlier events, such as the gathering of warriors for the siege, the cause of the war, and related concerns tend to appear near the beginning. Then the epic narrative takes up events prophesied for the future, such as Achilles' imminent death and the fall of Troy, although the narrative ends before these events take place. However, as these events are prefigured and alluded to more and more vividly, when it reaches an end the poem has told a more or less complete tale of the Trojan War.",
+      "pages": 504,
+      "publishDate": "1102-03-03",
+      "image": "./src/assets/images/illiad.jpg"
+    },
+    {
+      "id": 8,
+      "ratings": 4,
+      "author": "Herman Melville",
+      "title": "Moby-Dick",
+      "description": "The book is the sailor Ishmael's narrative of the obsessive quest of Ahab, captain of the whaling ship Pequod, for revenge on Moby Dick, the giant white sperm whale that on the ship's previous voyage bit off Ahab's leg at the knee. ",
+      "pages": 504,
+      "publishDate": "1102-03-03",
+      "image": "./src/assets/images/md.jpg"
+    },
+    {
+      "id": 9,
+      "ratings": 2,
+      "author": "F. Scott Fitzgerald",
+      "title": "The Great Gatsby",
+      "description": " a cast of characters living in the fictional towns of West Egg and East Egg on prosperous Long Island in the summer of 1922",
+      "pages": 504,
+      "publishDate": "2011-03-03",
+      "image": "./src/assets/images/gatsby.jpg"
+    },
+    {
+      "id": 10,
+      "ratings": 4,
+      "author": "William Shakespeare",
+      "title": "Romeo and Juliet",
+      "description": "Two young star-crossed lovers whose deaths ultimately reconcile their feuding families. ",
+      "pages": 504,
+      "publishDate": "2011-03-03",
+      "image": "./src/assets/images/rj.jpg"
+    }
+  ]
+}

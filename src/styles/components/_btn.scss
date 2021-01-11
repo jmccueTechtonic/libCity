@@ -3,25 +3,21 @@
   font-size: 1.125rem;
   padding: 0.5rem 2rem;
   border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
   border: 1px solid transparent;
   transition: all 0.3s;
-  &:hover,
-  &:focus {
-    transform: scale(1.001) translateY(-0.35rem);
-    box-shadow: 0 0.5rem 1.4rem rgba(0, 0, 0, 0.75);
-  }
-  &:active {
-    transform: scale(1) translateY(0);
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.75);
+
+  &__link {
+    text-decoration: underline !important;
   }
 
   &--success {
     // Success
     @include btnRest($color-main0, $color-main1);
 
-    &:hover,
-    &:focus {
-      @include btnActive($color-main1, $color-main0, $color-main0);
+    &:hover {
+      @include btnActive($color-main7, $color-main0, $color-main0);
     }
   }
 
@@ -29,27 +25,24 @@
     // Cancel
     @include btnRest($color-main3, $color-main5);
 
-    &:hover,
-    &:focus {
+    &:hover {
       @include btnActive($color-main6, $color-main3, $color-main3);
     }
   }
 
   &--setting-two {
-    // Add / Change
+    // Add / Change Image
     @include btnRest($color-main2, $color-main1);
 
-    &:hover,
-    &:focus {
-      @include btnActive($color-main1, $color-main2, $color-main2);
+    &:hover {
+      @include btnActive($color-main3, $color-main2, $color-main2);
     }
   }
   &--setting-danger {
     // Delete / Danger
     @include btnActive($color-main1, $color-danger, $color-danger);
 
-    &:hover,
-    &:focus {
+    &:hover {
       @include btnRest($color-danger, $color-main1);
     }
   }

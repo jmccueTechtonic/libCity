@@ -1,5 +1,6 @@
 $color-main0: rgb(39, 44, 49); // dark blue
 $color-main0--opacity: rgba(39, 44, 49, 0.9); // dark blue w/ opacity
+$color-main7: rgb(169, 169, 241); // light blue
 $color-main5: black;
 
 $color-main6: rgb(89, 99, 105); // dark grey
@@ -7,12 +8,10 @@ $color-main2: rgb(117, 130, 138); // medium grey
 $color-main3: rgb(233, 233, 233); // light grey
 $color-main1: white;
 
-$color-danger: salmon; // danger color
-$color-find: rgb(35, 112, 128); // teal
-$color-star: rgb(248, 255, 14); // yellow
+$color-danger: rgb(255, 89, 71); // danger color
+$color-danger--light: rgb(255, 188, 181); // danger light
+$color-find: rgb(55, 175, 199); // teal
 
-@mixin btn {
-}
 
 // Media Query
 /* 
@@ -55,8 +54,8 @@ lg
 }
 
 @mixin btnActive($backgroundColor, $color, $borderColor) {
-  // Btn for hover and focus
+  // Btn for hover
   background-color: $backgroundColor;
   color: $color;
-  border: 3px solid $borderColor;
+  border: 1px solid $borderColor;
 }

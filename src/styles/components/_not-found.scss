@@ -1,0 +1,25 @@
+.not-found-container {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+
+  display: grid;
+  grid-template-columns: 50vw;
+  grid-template-rows: max-content max-content;
+  justify-content: center;
+
+  &__details {
+    width: 100%;
+  }
+
+  &__home {
+    color: rgb(85, 185, 231);
+    cursor: pointer;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+  }
+}

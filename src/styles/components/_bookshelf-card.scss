@@ -8,8 +8,9 @@
   }
   &__searchBar--input {
     border: 1px solid rgb(201, 201, 201);
-    width: 10rem;
+    width: 12rem;
     padding: 5px;
+    padding-left: 1rem;
     border-radius: 4px;
   }
   &__intro {
@@ -18,16 +19,16 @@
 }
 
 .card {
-  border: 1px solid rgb(235, 235, 235);
+  cursor: pointer;
+  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.2);
+  border: 0 solid rgb(235, 235, 235);
   padding: 1rem;
-  margin: 0.5rem;
-
   width: 10rem;
   display: grid;
   grid-template-rows: max-content max-content max-content;
   justify-content: space-evenly;
   justify-items: center;
-  align-items: center;
+  text-align: center;
   grid-gap: 0.5rem;
 
   &--wrapper {
@@ -39,6 +40,8 @@
 
   &__img {
     height: 10rem;
+    width: auto;
+    object-fit: contain;
   }
   &__title {
     margin: 0;
