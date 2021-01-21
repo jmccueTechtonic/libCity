@@ -1,21 +1,26 @@
 const express = require("express");
-const logger = require("morgan");
-const cors = require("cors");
+const { sequelize } = require("./models");
+const logger = require("morgan"); // prints logging, was it a POST, how long, how many bytes
+const PORT = process.env.PORT || 9009;
+const AppError = require("./errorHandler");
 const app = express();
-const PORT = process.env.PORT || 8080;
 
-const corsOptions = {
-  origin: "http://localhost:1234",
-};
-
+// middleware magic
 app.use(logger("dev"));
-app.use(cors(corsOptions));
-app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("../client/dist"));
-}
+app.use((req, res, next) => {
+  next(new AppError("Could not find route", 404));
+});
+// This error handling middleware will throw an error if a middleware in front of it returns an error
+app.use((error, req, res, next) => {
+  if (res.headerSent) {
+    return next(error);
+  }
+  res.status(error.code || 500);
+  res.json({ message: error.message || "An unknown error occurred!" });
+});
 
 app.listen(PORT, () => {
   console.log(`API server listening on http://localhost:${PORT}!`);
