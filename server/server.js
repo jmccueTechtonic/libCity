@@ -2,6 +2,8 @@ const express = require("express");
 const { sequelize } = require("./models");
 const logger = require("morgan"); // prints logging, was it a POST, how long, how many bytes
 const PORT = process.env.PORT || 9009;
+const bookRoutes = require("./routes/book-routes");
+const fileRoutes = require("./routes/image-uploads");
 const AppError = require("./errorHandler");
 const app = express();
 
@@ -9,6 +11,9 @@ const app = express();
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+app.use("/api/books", bookRoutes);
+app.use("/api/file", fileRoutes);
 
 app.use((req, res, next) => {
   next(new AppError("Could not find route", 404));
@@ -22,6 +27,11 @@ app.use((error, req, res, next) => {
   res.json({ message: error.message || "An unknown error occurred!" });
 });
 
-app.listen(PORT, () => {
-  console.log(`API server listening on http://localhost:${PORT}!`);
-});
+sequelize
+  .sync()
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`Server now listening on 'http://localhost:${PORT}'!`);
+    });
+  })
+  .catch((error) => console.log(error));
