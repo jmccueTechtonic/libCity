@@ -4,8 +4,9 @@
   "description": "## Instructions:",
   "main": "index.js",
   "scripts": {
+    "build": "parcel build index.html --no-source-maps",
     "start": "parcel index.html --open",
-    "json:server": "json-server db.json --port 3000"
+    "json:server": "json-server db.json --open"
   },
   "repository": {
     "type": "git",
@@ -23,10 +24,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
-    "react-uuid": "^1.0.2",
-    "shortid": "^2.2.16",
-    "src": "^1.1.2",
-    "uuid": "^8.3.2"
+    "shortid": "^2.2.16"
   },
   "devDependencies": {
     "json-server": "^0.16.3",

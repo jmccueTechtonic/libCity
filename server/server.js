@@ -1,19 +1,29 @@
 const express = require("express");
-const { sequelize } = require("./models");
 const logger = require("morgan"); // prints logging, was it a POST, how long, how many bytes
-const PORT = process.env.PORT || 9009;
-const bookRoutes = require("./routes/book-routes");
-const fileRoutes = require("./routes/image-uploads");
+const cors = require("cors");
+const bookRoutes = require("./routes/bookRoutes");
 const AppError = require("./errorHandler");
+
+const { sequelize } = require("./models");
+
+const PORT = process.env.PORT || 9009;
 const app = express();
+
+const corsOptions = {
+  origin: "http://localhost:1234",
+};
 
 // middleware magic
 app.use(logger("dev"));
+app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/dist"));
+}
+
 app.use("/api/books", bookRoutes);
-app.use("/api/file", fileRoutes);
 
 app.use((req, res, next) => {
   next(new AppError("Could not find route", 404));

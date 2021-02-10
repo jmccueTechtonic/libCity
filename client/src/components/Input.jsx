@@ -20,6 +20,7 @@ export default function Input(props) {
     },
     inputType,
     updateRatingHandler,
+    previewUrl,
   } = props;
 
   let validationClass; //formBook--validation
@@ -59,15 +60,7 @@ export default function Input(props) {
         <>
           <div className="formImg">
             <img
-              src={
-                props.value
-                  ? imagesArray.find(
-                      (img) =>
-                        props.value ===
-                        `./src/assets/images${img.replace(/\..*\./, ".")}`
-                    )
-                  : blankCover
-              }
+              src={previewUrl ? previewUrl : blankCover}
               alt="Add or edit Image"
               className={`formImg__img ${validationClass}`}
             />

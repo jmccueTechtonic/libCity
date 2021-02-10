@@ -1,7 +1,7 @@
 import React from "react";
 
 import "../styles/index.scss";
-import imagesArray from "../utils/imagesArray";
+import defaultImg from "../assets/images/blank.jpg";
 
 export default function Book(props) {
   const {
@@ -20,10 +20,10 @@ export default function Book(props) {
     <div className="card--wrapper" onClick={props.onClick}>
       <section className="card">
         <img
-          src={imagesArray.find(
-            (item) =>
-              image === `./src/assets/images${item.replace(/\..*\./, ".")}`
-          )}
+          src={
+            String.fromCharCode.apply(null, new Uint16Array(image.data)) ||
+            defaultImg
+          }
           alt={title}
           className="card__img"
         />

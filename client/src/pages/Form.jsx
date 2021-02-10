@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams, Link } from "react-router-dom";
 import axios from "axios";
 import shortid from "shortid";
 
@@ -11,6 +11,7 @@ export default function Form(props) {
   const { id } = useParams();
   const { formType } = props; //formType --> edit or add
   const [formIsValid, setFormIsValid] = useState(false);
+  const [previewUrl, setPreviewUrl] = useState("");
   const [form, setForm] = useState([
     {
       id: "title", // Title
@@ -43,7 +44,6 @@ export default function Form(props) {
       validation: { required: false, pattern: ".{1}" },
       attributes: { type: "file" },
       placeholder: "",
-      accepts: ".jpg, .png, .jpeg",
       value: "",
       label: "",
       error: "Must have an image",
@@ -68,7 +68,7 @@ export default function Form(props) {
       validation: { required: false, pattern: ".{1}" },
       attributes: { type: "date" },
       placeholder: "",
-      value: "",
+      value: "" || "2000-01-01",
       label: "Published",
       error: "Must have a published date",
       dbName: "publishDate",
@@ -97,15 +97,34 @@ export default function Form(props) {
     },
   ]);
 
+  const fileReaderHandler = (fileArg) => {
+    const fileReader = new FileReader();
+    fileReader.onload = () => {
+      setPreviewUrl(fileReader.result);
+    };
+    fileReader.readAsDataURL(fileArg);
+  };
+
   useEffect(() => {
     if (formType === "edit") {
       const getBook = async () => {
         try {
-          const bk = await axios.get(`http://localhost:3000/books/${id}`);
+          const bk = await axios.get(`http://localhost:9009/api/books/${id}`);
+
           let copyForm = [...form];
           copyForm = copyForm.map((el) => {
             el = { ...el };
-            el.value = bk.data[el.dbName];
+
+            el.value = bk.data.books[0][el.dbName];
+            if (el.dbName === "image") {
+              setPreviewUrl(
+                String.fromCharCode.apply(
+                  null,
+                  new Uint16Array(bk.data.books[0][el.dbName].data)
+                )
+              );
+            }
+
             el.valid = true;
             return el;
           });
@@ -134,18 +153,19 @@ export default function Form(props) {
       let bk = {
         title: form[0].value,
         author: form[1].value,
-        image: form[2].value,
+        image: previewUrl,
         description: form[3].value,
         publishDate: form[4].value,
         pages: form[5].value,
         ratings: form[6].value,
       };
+
       if (formType === "edit") {
         const editBook = async () => {
           try {
-            axios.patch(`http://localhost:3000/books/${id}`, bk, {
+            await axios.patch(`http://localhost:9009/api/books/${id}`, bk, {
               headers: {
-                "Content-type": "application/json; charset=UTF-8",
+                "Content-type": "application/json",
               },
             });
             history.push("/books");
@@ -159,9 +179,9 @@ export default function Form(props) {
       if (formType === "add") {
         const createBook = async () => {
           try {
-            await axios.post("http://localhost:3000/books", bk, {
+            await axios.post("http://localhost:9009/api/books", bk, {
               headers: {
-                "Content-type": "application/json; charset=UTF-8",
+                "Content-type": "application/json",
               },
             });
             history.push("/books");
@@ -199,6 +219,9 @@ export default function Form(props) {
     copyForm = copyForm.map((el, i) => {
       el = { ...el };
       if (i === formItemNum) {
+        if (el.attributes.type === "file") {
+          fileReaderHandler(e.target.files[0]);
+        }
         el.value = value;
         el.valid = checkValidity(el.value, el.validation, el.id);
         el.touched = true;
@@ -214,7 +237,6 @@ export default function Form(props) {
   };
 
   const updateRatingHandler = (e, ratingValue) => {
-    const { value } = e.target;
     let copyForm = [...form];
 
     copyForm = copyForm.map((el, i) => {
@@ -244,6 +266,7 @@ export default function Form(props) {
         formType={formType}
         from={form}
         updateRatingHandler={updateRatingHandler}
+        previewUrl={previewUrl}
       />
     );
   });
@@ -259,14 +282,9 @@ export default function Form(props) {
           <button type="submit" className="btn btn--success formBook__btn">
             {formType === "edit" ? "Submit" : "Add Book"}
           </button>
-          <button
-            onClick={() => {
-              history.push("/home");
-            }}
-            className="btn btn--setting-one formBook__btn"
-          >
+          <Link to="/home" className="btn btn--setting-one formBook__btn">
             Cancel
-          </button>
+          </Link>
         </div>
       </div>
     </form>

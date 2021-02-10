@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import axios from "axios";
+import shortid from "shortid";
 
 import "../styles/index.scss";
 import Book from "../components/Book";
@@ -16,11 +17,14 @@ export default function Bookshelf() {
   useEffect(() => {
     const getAllBooks = async () => {
       try {
+        if (search) {
+          search = "/search?q=" + search.trim().split(" ").join("+");
+        } else {
+          search = "";
+        }
         setIsLoading(true);
-        let res = await axios.get(
-          `http://localhost:3000/books?q=${search.trim()}`
-        );
-        setBooks(res.data);
+        let res = await axios.get(`http://localhost:9009/api/books${search}`);
+        setBooks(res.data.books);
       } catch (error) {
         console.log(error);
       } finally {
@@ -40,18 +44,6 @@ export default function Bookshelf() {
     setSearchItem("");
   };
 
-  let bks;
-  if (books) {
-    bks = books.map((el) => (
-      <Book
-        key={el.id}
-        el={el}
-        onClick={() => {
-          history.push(`/books/details/${el.id}`);
-        }}
-      />
-    ));
-  }
   return (
     <section id="books" className="search page">
       <label htmlFor="booksSearch" className="search__searchBar--label">
@@ -71,7 +63,16 @@ export default function Bookshelf() {
       </label>
       <h1 className="search__intro">For the love of... books!</h1>
       <div className="card--wrapper">
-        {!!books && bks}
+        {books.length > 0 &&
+          books.map((el) => (
+            <Book
+              key={shortid.generate()}
+              el={el}
+              onClick={() => {
+                history.push(`/books/details/${el.book_id}`);
+              }}
+            />
+          ))}
         {isLoading && <Spinner />}
       </div>
     </section>

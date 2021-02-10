@@ -23,23 +23,18 @@ module.exports = (sequelize, DataTypes) => {
       },
       description: {
         type: DataTypes.TEXT,
-        allowNull: true,
       },
       pages: {
         type: DataTypes.INTEGER,
-        allowNull: true,
       },
       publishDate: {
         type: DataTypes.DATEONLY,
-        allowNull: true,
       },
       ratings: {
         type: DataTypes.INTEGER,
-        allowNull: true,
       },
       image: {
         type: DataTypes.BLOB("long"),
-        allowNull: true,
       },
     },
     {
