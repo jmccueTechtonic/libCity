@@ -14,6 +14,7 @@ router
   .patch(bookController.updateBook)
   .delete(bookController.deleteBook);
 
+// '/api/books/search?q'
 router.route("/:search").get(bookController.getBooksByQuery);
 
 module.exports = router;

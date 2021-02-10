@@ -1,16 +1,27 @@
 const express = require("express");
-const { sequelize } = require("./models");
 const logger = require("morgan"); // prints logging, was it a POST, how long, how many bytes
-const PORT = process.env.PORT || 9009;
+const cors = require("cors");
 const bookRoutes = require("./routes/bookRoutes");
-const fileRoutes = require("./routes/image-uploads");
 const AppError = require("./errorHandler");
+
+const { sequelize } = require("./models");
+
+const PORT = process.env.PORT || 9009;
 const app = express();
+
+const corsOptions = {
+  origin: "http://localhost:1234",
+};
 
 // middleware magic
 app.use(logger("dev"));
+app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/dist"));
+}
 
 app.use("/api/books", bookRoutes);
 

@@ -124,6 +124,7 @@ exports.updateBook = async (req, res, next) => {
       }
     );
   } catch (error) {
+    console.log(error);
     return next(new AppError("Updating book failed, please try again", 500));
   }
 
