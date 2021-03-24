@@ -1,99 +1,99 @@
-import React, { useState, useEffect } from "react";
-import { useHistory, useParams, Link } from "react-router-dom";
-import axios from "axios";
-import shortid from "shortid";
+import React, { useState, useEffect } from 'react';
+import { useHistory, useParams, Link } from 'react-router-dom';
+import axios from 'axios';
+import shortid from 'shortid';
 
-import "../styles/index.scss";
-import Input from "../components/Input";
+import '../styles/index.scss';
+import Input from '../components/Input';
 
 export default function Form(props) {
   const history = useHistory();
   const { id } = useParams();
   const { formType } = props; //formType --> edit or add
   const [formIsValid, setFormIsValid] = useState(false);
-  const [previewUrl, setPreviewUrl] = useState("");
+  const [previewUrl, setPreviewUrl] = useState('');
   const [form, setForm] = useState([
     {
-      id: "title", // Title
+      id: 'title', // Title
       valid: false,
       touched: false,
-      validation: { required: true, pattern: ".{2}" },
-      attributes: { type: "text" },
-      placeholder: "Enter Title",
-      value: "",
-      label: "Title",
-      error: "Must have a Title",
-      dbName: "title",
+      validation: { required: true, pattern: '.{2}' },
+      attributes: { type: 'text' },
+      placeholder: 'Enter Title',
+      value: '',
+      label: 'Title',
+      error: 'Must have a Title',
+      dbName: 'title',
     },
     {
-      id: "author", // Author
+      id: 'author', // Author
       valid: false,
       touched: false,
-      validation: { required: true, pattern: ".{2}" },
-      attributes: { type: "text" },
-      placeholder: "Enter Author",
-      value: "",
-      label: "Author",
-      error: "Must have an Author",
-      dbName: "author",
+      validation: { required: true, pattern: '.{2}' },
+      attributes: { type: 'text' },
+      placeholder: 'Enter Author',
+      value: '',
+      label: 'Author',
+      error: 'Must have an Author',
+      dbName: 'author',
     },
     {
-      id: "file", // Image / File
+      id: 'file', // Image / File
       valid: true,
       touched: false,
-      validation: { required: false, pattern: ".{1}" },
-      attributes: { type: "file" },
-      placeholder: "",
-      value: "",
-      label: "",
-      error: "Must have an image",
-      dbName: "image",
+      validation: { required: false, pattern: '.{1}' },
+      attributes: { type: 'file' },
+      placeholder: '',
+      value: '',
+      label: '',
+      error: 'Must have an image',
+      dbName: 'image',
     },
     {
-      id: "synopsis", // Synopsis
+      id: 'synopsis', // Synopsis
       valid: true,
       touched: false,
-      validation: { required: false, pattern: ".{1}" },
-      attributes: { name: "synopsis" },
-      placeholder: "This book is about...",
-      value: "",
-      label: "Synopsis",
-      error: "Must have a synopsis",
-      dbName: "description",
+      validation: { required: false, pattern: '.{1}' },
+      attributes: { name: 'synopsis' },
+      placeholder: 'This book is about...',
+      value: '',
+      label: 'Synopsis',
+      error: 'Must have a synopsis',
+      dbName: 'description',
     },
     {
-      id: "published", // Published
+      id: 'published', // Published
       valid: true,
       touched: false,
-      validation: { required: false, pattern: ".{1}" },
-      attributes: { type: "date" },
-      placeholder: "",
-      value: "" || "2000-01-01",
-      label: "Published",
-      error: "Must have a published date",
-      dbName: "publishDate",
+      validation: { required: false, pattern: '.{1}' },
+      attributes: { type: 'date' },
+      placeholder: '',
+      value: '' || '2000-01-01',
+      label: 'Published',
+      error: 'Must have a published date',
+      dbName: 'publishDate',
     },
     {
-      id: "numPages", // Pages
+      id: 'numPages', // Pages
       valid: true,
       touched: false,
-      validation: { required: false, pattern: ".{1}" },
-      attributes: { type: "number" },
-      placeholder: "Num. Pages",
+      validation: { required: false, pattern: '.{1}' },
+      attributes: { type: 'number' },
+      placeholder: 'Num. Pages',
       value: 0,
-      label: "Pages",
-      error: "Number of pages",
-      dbName: "pages",
+      label: 'Pages',
+      error: 'Number of pages',
+      dbName: 'pages',
     },
     {
-      id: "rating", // Rating
+      id: 'rating', // Rating
       valid: true,
       touched: false,
-      validation: { required: false, pattern: ".{1}" },
+      validation: { required: false, pattern: '.{1}' },
       value: 0,
-      label: "Rating",
-      error: "Must have a rating",
-      dbName: "ratings",
+      label: 'Rating',
+      error: 'Must have a rating',
+      dbName: 'ratings',
     },
   ]);
 
@@ -106,7 +106,7 @@ export default function Form(props) {
   };
 
   useEffect(() => {
-    if (formType === "edit") {
+    if (formType === 'edit') {
       const getBook = async () => {
         try {
           const bk = await axios.get(`http://localhost:9009/api/books/${id}`);
@@ -116,7 +116,7 @@ export default function Form(props) {
             el = { ...el };
 
             el.value = bk.data.books[0][el.dbName];
-            if (el.dbName === "image") {
+            if (el.dbName === 'image') {
               setPreviewUrl(
                 String.fromCharCode.apply(
                   null,
@@ -160,15 +160,15 @@ export default function Form(props) {
         ratings: form[6].value,
       };
 
-      if (formType === "edit") {
+      if (formType === 'edit') {
         const editBook = async () => {
           try {
             await axios.patch(`http://localhost:9009/api/books/${id}`, bk, {
               headers: {
-                "Content-type": "application/json",
+                'Content-type': 'application/json',
               },
             });
-            history.push("/books");
+            history.push('/books');
           } catch (error) {
             console.log(error);
           }
@@ -176,15 +176,15 @@ export default function Form(props) {
         editBook();
       }
 
-      if (formType === "add") {
+      if (formType === 'add') {
         const createBook = async () => {
           try {
-            await axios.post("http://localhost:9009/api/books", bk, {
+            await axios.post('http://localhost:9009/api/books', bk, {
               headers: {
-                "Content-type": "application/json",
+                'Content-type': 'application/json',
               },
             });
-            history.push("/books");
+            history.push('/books');
           } catch (error) {
             console.log(error);
           }
@@ -198,11 +198,11 @@ export default function Form(props) {
     let isValid = true;
 
     if (validation.required) {
-      if (id === "numPages" || id === "rating") {
+      if (id === 'numPages' || id === 'rating') {
         return +value > 0;
       }
 
-      isValid = value.trim() !== "" && isValid;
+      isValid = value.trim() !== '' && isValid;
 
       if (validation.pattern) {
         isValid = value.search(validation.pattern) > -1 && isValid;
@@ -219,7 +219,7 @@ export default function Form(props) {
     copyForm = copyForm.map((el, i) => {
       el = { ...el };
       if (i === formItemNum) {
-        if (el.attributes.type === "file") {
+        if (el.attributes.type === 'file') {
           fileReaderHandler(e.target.files[0]);
         }
         el.value = value;
@@ -241,7 +241,7 @@ export default function Form(props) {
 
     copyForm = copyForm.map((el, i) => {
       el = { ...el };
-      if (el.id === "rating") {
+      if (el.id === 'rating') {
         el.value = ratingValue;
         el.valid = checkValidity(el.value, el.validation, el.id);
         el.touched = true;
@@ -272,17 +272,17 @@ export default function Form(props) {
   });
 
   return (
-    <form className="formBook" onSubmit={submitFormHandler}>
-      <h1 className="formBook__detail">
-        {formType === "edit" ? "Edit Book" : "Add Book"}
+    <form className='formBook' onSubmit={submitFormHandler}>
+      <h1 className='formBook__detail'>
+        {formType === 'edit' ? 'Edit Book' : 'Add Book'}
       </h1>
-      <div className="formBook__wrapper">
+      <div className='formBook__wrapper'>
         {formMapped}
-        <div className="formBook__wrapper--action">
-          <button type="submit" className="btn btn--success formBook__btn">
-            {formType === "edit" ? "Submit" : "Add Book"}
+        <div className='formBook__wrapper--action'>
+          <button type='submit' className='btn btn--success formBook__btn'>
+            {formType === 'edit' ? 'Submit' : 'Add Book'}
           </button>
-          <Link to="/home" className="btn btn--setting-one formBook__btn">
+          <Link to='/' className='btn btn--setting-one formBook__btn'>
             Cancel
           </Link>
         </div>

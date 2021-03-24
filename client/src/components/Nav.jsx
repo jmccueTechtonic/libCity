@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { NavLink, useHistory } from "react-router-dom";
+import React, { useState } from 'react';
+import { NavLink, useHistory } from 'react-router-dom';
 
-import "../styles/index.scss";
+import '../styles/index.scss';
 
 export default function Nav() {
   const history = useHistory();
-  const [searchItem, setSearchItem] = useState("");
+  const [searchItem, setSearchItem] = useState('');
   const [showCurtain, setShowCurtain] = useState(false);
 
   const updateSearchHandler = (e) => {
@@ -15,53 +15,57 @@ export default function Nav() {
 
   const searchBookHandler = () => {
     history.push(`/books/${searchItem.trim()}`);
-    setSearchItem("");
+    setSearchItem('');
   };
 
   const toggleShowCurtain = () => {
     setShowCurtain(!showCurtain);
   };
   return (
-    <nav className="nav">
-      <h1 className="nav__link nav__title">Library City</h1>
-      <ul className={`nav__nav-list ${showCurtain && "visible"}`}>
-        <li className="nav__nav-item">
+    <nav data-cy='navBar' className='nav'>
+      <h1 className='nav__link nav__title'>Library City</h1>
+      <ul className={`nav__nav-list ${showCurtain ? 'visible' : ''}`}>
+        <li className='nav__nav-item'>
           <NavLink
+            data-cy='link-home'
             exact
-            to="/home"
-            className="nav__link nav__link--small"
-            activeClassName="btn__link"
+            to='/'
+            className='nav__link nav__link--small'
+            activeClassName='btn__link'
           >
             Home
           </NavLink>
         </li>
-        <li className="nav__nav-item">
+        <li className='nav__nav-item'>
           <NavLink
+            data-cy='link-books'
             exact
-            to="/books"
-            className="nav__link nav__link--small"
-            activeClassName="btn__link"
+            to='/books'
+            className='nav__link nav__link--small'
+            activeClassName='btn__link'
           >
             Bookshelf
           </NavLink>
         </li>
-        <li className="nav__nav-item">
+        <li className='nav__nav-item'>
           <NavLink
+            data-cy='link-addBook'
             exact
-            to="/books/add"
-            className="nav__link nav__link--small"
-            activeClassName="btn__link"
+            to='/books/add'
+            className='nav__link nav__link--small'
+            activeClassName='btn__link'
           >
             Add Book
           </NavLink>
         </li>
-        <li className="nav__nav-item">
-          <label htmlFor="search"></label>
+        <li className='nav__nav-item'>
+          <label htmlFor='search'></label>
           <input
-            id="search"
-            type="text"
-            className="nav__search"
-            placeholder="Author / Title"
+            data-cy='nav-search'
+            id='search'
+            type='text'
+            className='nav__search'
+            placeholder='Author / Title'
             value={searchItem}
             onKeyDown={(e) => {
               if (e.keyCode === 13) {
@@ -71,19 +75,24 @@ export default function Nav() {
             onChange={(e) => updateSearchHandler(e)}
           />
         </li>
-        <li className="nav__nav-item">
-          <button onClick={() => searchBookHandler()} className="nav__btn">
+        <li className='nav__nav-item'>
+          <button
+            data-cy='nav-searchBtn'
+            onClick={() => searchBookHandler()}
+            className='nav__btn'
+          >
             Search
           </button>
         </li>
       </ul>
       <span
-        className={`nav__burger-btn ${showCurtain && "changeBurger"}`}
+        data-cy='burgerBtn'
+        className={`nav__burger-btn ${showCurtain && 'changeBurger'}`}
         onClick={toggleShowCurtain}
       >
-        <div className="nav__slice burger1"></div>
-        <div className="nav__slice burger2"></div>
-        <div className="nav__slice burger3"></div>
+        <div className='nav__slice burger1'></div>
+        <div className='nav__slice burger2'></div>
+        <div className='nav__slice burger3'></div>
       </span>
     </nav>
   );
