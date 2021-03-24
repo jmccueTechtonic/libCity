@@ -1,5 +1,5 @@
 {
-  "development": {
+  "test": {
     "username": "sql5391945",
     "password": "xpskxUgif3",
     "database": "sql5391945",
@@ -7,7 +7,7 @@
     "dialect": "mysql",
     "port": 3306
   },
-  "test": {
+  "development": {
     "username": "root",
     "password": "PWmccue!",
     "database": "library",
