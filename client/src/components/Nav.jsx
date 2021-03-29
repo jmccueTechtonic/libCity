@@ -24,7 +24,7 @@ export default function Nav() {
   return (
     <nav data-cy='navBar' className='nav'>
       <h1 className='nav__link nav__title'>Library City</h1>
-      <ul className={`nav__nav-list ${showCurtain ? 'visible' : ''}`}>
+      <ul data-cy='link-list' className={`nav__nav-list ${showCurtain ? 'visible' : ''}`}>
         <li className='nav__nav-item'>
           <NavLink
             data-cy='link-home'
@@ -87,7 +87,7 @@ export default function Nav() {
       </ul>
       <span
         data-cy='burgerBtn'
-        className={`nav__burger-btn ${showCurtain && 'changeBurger'}`}
+        className={`nav__burger-btn ${showCurtain ? 'changeBurger' : ''}`}
         onClick={toggleShowCurtain}
       >
         <div className='nav__slice burger1'></div>

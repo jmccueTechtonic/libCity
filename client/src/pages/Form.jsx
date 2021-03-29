@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams, Link } from 'react-router-dom';
 import axios from 'axios';
-import shortid from 'shortid';
 
 import '../styles/index.scss';
 import Input from '../components/Input';

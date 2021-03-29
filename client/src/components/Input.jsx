@@ -2,7 +2,6 @@ import React from 'react';
 
 import '../styles/index.scss';
 import blankCover from '../assets/images/blank.jpg';
-import imagesArray from '../utils/imagesArray';
 import StarSvg from './StarSvg';
 
 export default function Input(props) {

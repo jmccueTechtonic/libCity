@@ -12,7 +12,7 @@ export default function StarSvg({ num, adjustable, updateRatingHandler }) {
         return (
           <svg
             key={shortid.generate()}
-            id='star2'
+            id={`star${i+1}`}
             className='formBook__star'
             fill={
               hoverableRating > i || num > i ? 'yellow' : 'rgb(233, 233, 233)'
