@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import "../styles/index.scss";
-import blankCover from "../assets/images/blank.jpg";
-import imagesArray from "../utils/imagesArray";
-import StarSvg from "./StarSvg";
+import '../styles/index.scss';
+import blankCover from '../assets/images/blank.jpg';
+import imagesArray from '../utils/imagesArray';
+import StarSvg from './StarSvg';
 
 export default function Input(props) {
   const {
@@ -26,16 +26,16 @@ export default function Input(props) {
   let validationClass; //formBook--validation
   let errMsg;
   if (!valid && required && touched) {
-    validationClass = "formBook--validation";
+    validationClass = 'formBook--validation';
     errMsg = error;
   }
 
   let field;
   switch (id) {
-    case "title":
-    case "author":
-    case "published":
-    case "numPages":
+    case 'title':
+    case 'author':
+    case 'published':
+    case 'numPages':
       field = (
         <>
           <label
@@ -55,29 +55,29 @@ export default function Input(props) {
         </>
       );
       break;
-    case "file":
+    case 'file':
       field = (
         <>
-          <div className="formImg">
+          <div className='formImg'>
             <img
               src={previewUrl ? previewUrl : blankCover}
-              alt="Add or edit Image"
+              alt='Add or edit Image'
               className={`formImg__img ${validationClass}`}
             />
-            <label htmlFor={id} className="btn btn--setting-two formImg__btn">
-              {props.formType === "edit" ? "Edit Image" : "Add Image"}
+            <label htmlFor={id} className='btn btn--setting-two formImg__btn'>
+              {props.formType === 'edit' ? 'Edit Image' : 'Add Image'}
             </label>
             <input
               id={id}
               {...attributes}
-              style={{ display: "none" }}
+              style={{ display: 'none' }}
               onChange={props.onChange}
             />
           </div>
         </>
       );
       break;
-    case "synopsis":
+    case 'synopsis':
       field = (
         <>
           <label
@@ -98,10 +98,10 @@ export default function Input(props) {
         </>
       );
       break;
-    case "rating":
+    case 'rating':
       field = (
         <>
-          <label htmlFor={id} className="formBook__label">
+          <label htmlFor={id} className='formBook__label'>
             {label}
           </label>
           <div id={id} className={`formBook__${id} ${validationClass}`}>
